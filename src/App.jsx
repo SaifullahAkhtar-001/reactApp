@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import Counter from './components/Counter';
-import './index.css';
+import { useState } from "react";
+import "./index.css";
+import Expense from "./components/Expense";
+import Forms from "./components/Forms";
 
 function App() {
-  const initValue = 0;
+  const SubmitHandler = (enteredExpenseData) => {
+    const ExpenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString(),
+    };
+    console.log(ExpenseData);
+  };
   return (
-    <>
-      <div className='text-4xl text-red-500'>Hello</div>
-      <Counter initValue={initValue}/>
-    </>
-  )
+    <div className="flex flex-col gap-10">
+      <Forms onFormSubmision={SubmitHandler} />
+      <Expense />
+    </div>
+  );
 }
 
-export default App
+export default App;
