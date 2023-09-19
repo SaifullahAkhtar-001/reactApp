@@ -7,7 +7,7 @@ function Expensedate(props) {
 
   return (
     <div>
-      <div className="flex flex-col w-24 bg-stone-700 p-4 rounded-lg border-[1px] border-[#ececec]">
+      <div className="flex flex-col w-28 bg-stone-700 p-4 rounded-lg border-[1px] border-[#ececec]">
         <div className="font-bold">{month}</div>
         <div className="font-semibold">{day}</div>
         <div>{year}</div>

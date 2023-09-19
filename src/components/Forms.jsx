@@ -18,13 +18,13 @@ function Forms(props) {
     event.preventDefault();
     const ExpenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-    props.onFormSubmision(ExpenseData)
-    setenteredTitle('');
-    setenteredAmount('');
-    setenteredDate('');
+    props.onFormSubmision(ExpenseData);
+    setenteredTitle("");
+    setenteredAmount("");
+    setenteredDate("");
   };
   return (
     <Card className="bg-stone-950">
@@ -32,6 +32,7 @@ function Forms(props) {
         <div className="flex flex-col text-left gap-3">
           <label>Title</label>
           <input
+            required
             value={enteredTitle}
             onChange={changeTitleHandler}
             type="text"
@@ -39,6 +40,7 @@ function Forms(props) {
           />
           <label>Amount</label>
           <input
+            required
             value={enteredAmount}
             onChange={changeAmountHandler}
             type="number"
@@ -50,12 +52,13 @@ function Forms(props) {
           />
           <label>Date</label>
           <input
+            required
             value={enteredDate}
             onChange={changeDateHandler}
             type="date"
             name=""
             id=""
-            min="2023-01-01"
+            min="2019-01-01"
             className="p-2 rounded-lg"
           />
         </div>
